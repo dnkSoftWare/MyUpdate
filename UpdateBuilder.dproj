@@ -1,0 +1,178 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B47BF1AA-00D1-45CB-A7EB-F7F46E8299C5}</ProjectGuid>
+        <ProjectVersion>14.4</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>UpdateBuilder.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>cxPivotGridChartRS17;JvGlobus;DataAbstract_IDE_D17;JvMM;JvManagedThreads;tmsexdxe3;dac170;dxCoreRS17;cxPageControldxBarPopupMenuRS17;dxPSDBTeeChartRS17;JvCrypt;dxPSTeeChartRS17;dxPScxSchedulerLnkRS17;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;RemObjects_Indy_D17;dxPScxTLLnkRS17;JvNet;JvDotNetCtrls;dxRibbonRS17;DbxCommonDriver;cxDataRS17;vclimg;dxSkinsdxBarPainterRS17;dxPSdxDBTVLnkRS17;dbxcds;DatasnapConnectorsFreePascal;frxIBX17;JvXPCtrls;vcldb;cxExportRS17;CodeSiteLoggingPkg;DbxDevartSQLServerDriver170;dxBarExtItemsRS17;dxPSCoreRS17;dxGDIPlusRS17;dxNavBarRS17;OmniThreadLibraryRuntimeXE3;CustomIPTransport;cxLibraryRS17;cxGridRS17;dsnap;IndyIPServer;unidac170;IndyCore;NativeExcelD2011;CloudService;dxPScxCommonRS17;FmxTeeUI;frxDB17;AnyDAC_PhysDb2_D17;dxSkinsdxDLPainterRS17;JvDB;JvRuntimeDesign;dxPScxVGridLnkRS17;JclDeveloperTools;dxPScxExtCommonRS17;dxPScxSSLnkRS17;DataAbstract_DBXDriver_Pro_D17;fs17;dxPSdxLCLnkRS17;frxTee17;bindcompfmx;vcldbx;fsTee17;cxSchedulerGridRS17;dbrtl;bindcomp;inetdb;JvPluginSystem;dxBarRS17;DBXOdbcDriver;dxBarDBNavRS17;JvCmp;JvTimeFramework;xmlrtl;dxSkinsdxRibbonPainterRS17;ibxpress;RemObjects_Synapse_D17;tmsdxe3;dxDockingRS17;vclactnband;bindengine;soaprtl;FMXTee;fsADO17;dxADOServerModeRS17;bindcompvcl;dxBarExtDBItemsRS17;dxPSPrVwRibbonRS17;Jcl;vclie;frxADO17;cxPageControlRS17;CodeSiteDBToolsPkg;dxSkinscxPCPainterRS17;aurelius;AnyDAC_PhysADS_D17;AnyDAC_PhysIB_D17;DataAbstract_SQLiteDriver_D17;dxmdsRS17;DBXInformixDriver;dxPsPrVwAdvRS17;dxdborRS17;dsnapcon;DBXFirebirdDriver;inet;fsDB17;JvPascalInterpreter;vclx;dclfrxTee17;cxEditorsRS17;DBXSybaseASADriver;tmsxlsdxe3;dbisamr;vclAbsDBd17;XLSRWII5_DXE3;crcontrols170;DataAbstract_ActiveScripting_D17;dbexpress;EurekaLogCore;IndyIPClient;JvBDE;AnyDAC_PhysMySQL_D17;cxTreeListdxBarPopupMenuRS17;autoupgrXE5;dxThemeRS17;DBXSqliteDriver;dxPScxGridLnkRS17;fmx;JvDlgs;IndySystem;TeeDB;inetdbbde;DataSnapClient;log4delphi_D7_PROF;DataSnapProviderClient;DBXSybaseASEDriver;cxBarEditItemRS17;AnyDAC_PhysMSAcc_D17;dxServerModeRS17;cxPivotGridOLAPRS17;cxSchedulerRS17;MetropolisUILiveTile;AnyDAC_PhysSQLITE_D17;fsBDE17;dxPSLnksRS17;dxPSdxDBOCLnkRS17;cxVerticalGridRS17;vcldsnap;dacvcl170;DBXDb2Driver;AnyDAC_ComI_D17;DBXOracleDriver;AnyDAC_PhysMSSQL_D17;JvCore;QImport3RT_D17;vclribbon;AnyDAC_Comp_D17;RaudusD170;cxSpreadSheetRS17;AnyDAC_PhysODBC_D17;fmxase;vcl;AnyDAC_PhysPg_D17;IndyIPCommon;DBXMSSQLDriver;dxPSdxOCLnkRS17;dcldxSkinsCoreRS17;tmswizdxe3;JvAppFrm;fsIBX17;AnyDAC_PhysASA_D17;inetdbxpress;webdsnap;AR;DataAbstract_SpiderMonkeyScripting_D17;AnyDAC_PhysOracle_D17;JvDocking;adortl;dxSkinscxSchedulerPainterRS17;JvWizards;JvHMI;xf40_unr_dXE3;frx17;dxtrmdRS17;dxPScxPCProdRS17;AnyDAC_GUIxForms_D17;frxDBX17;JvBands;rtl;DbxClientDriver;AnyDAC_PhysTDBX_D17;dxTabbedMDIRS17;dxComnRS17;dxSkinsCoreRS17;dxdbtrRS17;Tee;JclContainers;JvSystem;dxorgcRS17;svnui;FoxIt;JvControls;IndyProtocols;DBXMySQLDriver;dxLayoutControlRS17;DataAbstract_DBXDriver_Enterprise_D17;bindcompdbx;TeeUI;JvJans;JvPrintPreview;JvPageComps;UpdaterRT;JvStdCtrls;JvCustom;AgExcelReport;dxPScxPivotGridLnkRS17;dxSpellCheckerRS17;vcltouch;websnap;pck_SQLite3;dxTileControlRS17;RemObjects_WebBroker_D17;VclSmp;PAXCOMPILER;cxPivotGridRS17;DataSnapConnectors;QExport4RT_D17;clinetsuitedXE3;AnyDAC_Phys_D17;Abbrevia;fmxobj;cxTreeListRS17;JclVcl;dxPSdxFCLnkRS17;unidacvcl170;frxe17;svn;dxFlowChartRS17;fmxdae;dxSkinsdxNavBarPainterRS17;bdertl;VirtualTreesR;frxBDE17;dxDBXServerModeRS17;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>dxCoreRS17;cxPageControldxBarPopupMenuRS17;dxPSDBTeeChartRS17;dxPSTeeChartRS17;dxPScxSchedulerLnkRS17;DBXInterBaseDriver;DataSnapServer;DataSnapCommon;dxPScxTLLnkRS17;dxRibbonRS17;DbxCommonDriver;cxDataRS17;vclimg;dxSkinsdxBarPainterRS17;dxPSdxDBTVLnkRS17;dbxcds;DatasnapConnectorsFreePascal;vcldb;cxExportRS17;dxBarExtItemsRS17;dxPSCoreRS17;dxGDIPlusRS17;dxNavBarRS17;CustomIPTransport;cxLibraryRS17;cxGridRS17;dsnap;IndyIPServer;IndyCore;dxPScxCommonRS17;AnyDAC_PhysDb2_D17;dxSkinsdxDLPainterRS17;dxPScxVGridLnkRS17;dxPScxExtCommonRS17;dxPScxSSLnkRS17;dxPSdxLCLnkRS17;bindcompfmx;dbrtl;bindcomp;inetdb;dxBarRS17;DBXOdbcDriver;dxBarDBNavRS17;xmlrtl;dxSkinsdxRibbonPainterRS17;ibxpress;dxDockingRS17;vclactnband;bindengine;soaprtl;dxADOServerModeRS17;bindcompvcl;dxBarExtDBItemsRS17;dxPSPrVwRibbonRS17;vclie;cxPageControlRS17;dxSkinscxPCPainterRS17;aurelius;AnyDAC_PhysADS_D17;AnyDAC_PhysIB_D17;dxmdsRS17;DBXInformixDriver;dxPsPrVwAdvRS17;dxdborRS17;dsnapcon;DBXFirebirdDriver;inet;vclx;cxEditorsRS17;DBXSybaseASADriver;dbexpress;IndyIPClient;AnyDAC_PhysMySQL_D17;cxTreeListdxBarPopupMenuRS17;dxThemeRS17;DBXSqliteDriver;dxPScxGridLnkRS17;fmx;IndySystem;TeeDB;DataSnapClient;DataSnapProviderClient;DBXSybaseASEDriver;cxBarEditItemRS17;AnyDAC_PhysMSAcc_D17;dxServerModeRS17;cxPivotGridOLAPRS17;cxSchedulerRS17;AnyDAC_PhysSQLITE_D17;dxPSLnksRS17;dxPSdxDBOCLnkRS17;cxVerticalGridRS17;vcldsnap;DBXDb2Driver;AnyDAC_ComI_D17;DBXOracleDriver;AnyDAC_PhysMSSQL_D17;AnyDAC_Comp_D17;cxSpreadSheetRS17;AnyDAC_PhysODBC_D17;fmxase;vcl;AnyDAC_PhysPg_D17;IndyIPCommon;DBXMSSQLDriver;dxPSdxOCLnkRS17;dcldxSkinsCoreRS17;AnyDAC_PhysASA_D17;inetdbxpress;webdsnap;AnyDAC_PhysOracle_D17;adortl;dxSkinscxSchedulerPainterRS17;dxPScxPCProdRS17;AnyDAC_GUIxForms_D17;rtl;DbxClientDriver;AnyDAC_PhysTDBX_D17;dxTabbedMDIRS17;dxComnRS17;dxSkinsCoreRS17;dxdbtrRS17;Tee;dxorgcRS17;IndyProtocols;DBXMySQLDriver;dxLayoutControlRS17;bindcompdbx;TeeUI;dxPScxPivotGridLnkRS17;vcltouch;websnap;VclSmp;cxPivotGridRS17;DataSnapConnectors;AnyDAC_Phys_D17;fmxobj;cxTreeListRS17;dxPSdxFCLnkRS17;dxFlowChartRS17;fmxdae;dxSkinsdxNavBarPainterRS17;dxDBXServerModeRS17;DataSnapIndy10ServerTransport;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>false</DCC_DebugInformation>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="UnitBulder.pas">
+            <Form>FormUpdateBuilder</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">1</VersionInfo>
+                    <VersionInfo Name="MinorVer">0</VersionInfo>
+                    <VersionInfo Name="Release">0</VersionInfo>
+                    <VersionInfo Name="Build">0</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1049</VersionInfo>
+                    <VersionInfo Name="CodePage">1251</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                    <VersionInfoKeys Name="CFBundleName"/>
+                    <VersionInfoKeys Name="CFBundleDisplayName"/>
+                    <VersionInfoKeys Name="CFBundleIdentifier"/>
+                    <VersionInfoKeys Name="CFBundleVersion"/>
+                    <VersionInfoKeys Name="CFBundlePackageType"/>
+                    <VersionInfoKeys Name="CFBundleSignature"/>
+                    <VersionInfoKeys Name="CFBundleAllowMixedLocalizations"/>
+                    <VersionInfoKeys Name="CFBundleExecutable"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">UpdateBuilder.dpr</Source>
+                </Source>
+            </Delphi.Personality>
+            <Deployment/>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>
+
+<!-- EurekaLog First Line
+[Exception Log]
+EurekaLog Version=7007
+Activate=0
+atVCL=1
+DefaultThreadState=1
+DeleteMapAfterCompile=0
+dpJCL=1
+Encrypt Password=""
+idEurekaLog=1
+idEurekaLogDetailed=1
+idMSClassic=1
+idStepsToReproduce=1
+ProjectID="{66198AB8-7B09-40BA-8D4A-DE50C5AEA971}"
+sndShowFailureMsg=1
+soAppName=1
+soAppStartDate=1
+soAppVersionNumber=1
+soCmpName=1
+soExcModuleName=1
+soOSType=1
+EurekaLog Last Line -->

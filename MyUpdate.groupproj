@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{4CBD296A-4E3A-4B84-A8A7-671C64533602}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="tmupdate.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UpdateBuilder.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\dnkLib\myupdate.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="tmupdate">
+        <MSBuild Projects="tmupdate.dproj"/>
+    </Target>
+    <Target Name="tmupdate:Clean">
+        <MSBuild Projects="tmupdate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tmupdate:Make">
+        <MSBuild Projects="tmupdate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UpdateBuilder">
+        <MSBuild Projects="UpdateBuilder.dproj"/>
+    </Target>
+    <Target Name="UpdateBuilder:Clean">
+        <MSBuild Projects="UpdateBuilder.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UpdateBuilder:Make">
+        <MSBuild Projects="UpdateBuilder.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="myupdate">
+        <MSBuild Projects="..\dnkLib\myupdate.dproj"/>
+    </Target>
+    <Target Name="myupdate:Clean">
+        <MSBuild Projects="..\dnkLib\myupdate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="myupdate:Make">
+        <MSBuild Projects="..\dnkLib\myupdate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="tmupdate;UpdateBuilder;myupdate"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="tmupdate:Clean;UpdateBuilder:Clean;myupdate:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="tmupdate:Make;UpdateBuilder:Make;myupdate:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

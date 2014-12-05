@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{58069C3C-FC6F-43CA-99A1-A51BC26A6A63}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="tmupdate.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UpdaterDT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="UpdaterRT.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestUpdater.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CreateUpdatePack.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="tmupdate">
+        <MSBuild Projects="tmupdate.dproj"/>
+    </Target>
+    <Target Name="tmupdate:Clean">
+        <MSBuild Projects="tmupdate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="tmupdate:Make">
+        <MSBuild Projects="tmupdate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UpdaterDT">
+        <MSBuild Projects="UpdaterDT.dproj"/>
+    </Target>
+    <Target Name="UpdaterDT:Clean">
+        <MSBuild Projects="UpdaterDT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UpdaterDT:Make">
+        <MSBuild Projects="UpdaterDT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UpdaterRT">
+        <MSBuild Projects="UpdaterRT.dproj"/>
+    </Target>
+    <Target Name="UpdaterRT:Clean">
+        <MSBuild Projects="UpdaterRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UpdaterRT:Make">
+        <MSBuild Projects="UpdaterRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestUpdater">
+        <MSBuild Projects="TestUpdater.dproj"/>
+    </Target>
+    <Target Name="TestUpdater:Clean">
+        <MSBuild Projects="TestUpdater.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestUpdater:Make">
+        <MSBuild Projects="TestUpdater.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CreateUpdatePack">
+        <MSBuild Projects="CreateUpdatePack.dproj"/>
+    </Target>
+    <Target Name="CreateUpdatePack:Clean">
+        <MSBuild Projects="CreateUpdatePack.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CreateUpdatePack:Make">
+        <MSBuild Projects="CreateUpdatePack.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="tmupdate;UpdaterDT;UpdaterRT;TestUpdater;CreateUpdatePack"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="tmupdate:Clean;UpdaterDT:Clean;UpdaterRT:Clean;TestUpdater:Clean;CreateUpdatePack:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="tmupdate:Make;UpdaterDT:Make;UpdaterRT:Make;TestUpdater:Make;CreateUpdatePack:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
